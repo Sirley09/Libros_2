@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block titulo %}
+  Lista de libros
+{% endblock %}
+{% block contenido %}
+
+  <h1>Lista de libros</h1>
+
+  <table border="2", style="width:80%">
+  <tr>
+    	<th>Id</th>
+      <th>Titulo</th>
+      <th>Autor</th>
+          
+    </tr>
+
+     
+      {% for l in Lib %}
+
+        <tr>
+      	  
+          <td>{{ l.titulo }}</td>
+          
+          <td>{{l.autor}}</td>
+    
+          <td><a href="{% url 'vista_ver_libro' id_lbr=l.id %}">ver detalle</a></td>
+          <td><a href="{% url 'vista_editar_libro' id_lbr=l.id %}">editar</a></td>
+          <td><a href="{% url 'vista_eliminar_libro' id_lib=l.id %}">Eliminar</a></td>
+        </tr>
+ 		  {% endfor %}
+      
+  </table>
+{% endblock %}
+

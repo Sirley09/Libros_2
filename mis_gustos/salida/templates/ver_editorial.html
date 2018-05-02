@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block titulo %}
+  {{e.nombres}}
+{% endblock %}
+
+{% block contenido %}
+  <h1>Detalle</h1>
+    <table border="2", style="width:80%">
+      <tr>
+          <th>Nombre</th>
+      </tr>
+      <tr>
+          <td>{{ e.nombre }}</td>
+      </tr>
+      <a href="{% url 'vista_ver_editorial' id_edi=e.id %}"></a>
+    </table>
+  
+ {% endblock %}

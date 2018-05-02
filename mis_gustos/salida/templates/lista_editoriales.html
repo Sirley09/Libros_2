@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block titulo %}
+  Lista de editoriales
+{% endblock %}
+{% block contenido %}
+
+  <h1>Lista de editoriales</h1>
+  <p>
+    {% for e in Edi %}
+      NOMBRE: {{ e.nombre }}
+
+      <td><a href="{% url 'vista_ver_editorial' id_edi=e.id %}">ver detalle</a></td>
+      <td><a href="{% url 'vista_editar_editorial' id_edi=e.id %}">editar</a></td>
+    {% endfor %}
+  </p>
+{% endblock %}

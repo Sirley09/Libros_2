@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block titulo %}
+  {{g.nombres}}
+{% endblock %}
+
+{% block contenido %}
+  <h1>Detalle</h1>
+    <table border="2", style="width:80%">
+      <tr>
+          <th>Tipo</th>
+      </tr>
+      <tr>
+          <td>{{ g.tipo }}</td>
+      </tr>
+      <a href="{% url 'vista_ver_genero' id_gen=g.id %}"></a>
+    </table>
+  
+ {% endblock %}

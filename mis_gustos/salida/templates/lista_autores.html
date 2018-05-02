@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block titulo %}
+  Lista de autores
+{% endblock %}
+{% block contenido %}
+
+  <h1>Lista de autores</h1>
+  
+  <table border="2", style="width: 80%">
+    <tr>
+      
+      <th>Nombres</th>
+      <th>Apellidos</th>
+    </tr>
+     
+        {% for a in Aut %}
+        <tr>
+          
+          <td> {{ a.nombres }}</td>
+          <td>  {{ a.apellidos }}</td>
+
+            
+
+            <td><a href="{% url 'vista_ver_autor' id_aut=a.id %}">ver detalle</a></td>
+            
+            <td><a href="{% url 'vista_editar_autor' id_aut=a.id %}">editar</a></td>
+        
+
+        </tr>
+      
+        
+      {% endfor %}
+
+    
+  </table>
+{% endblock %}

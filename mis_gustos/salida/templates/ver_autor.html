@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block titulo %}
+  {{a.nombres}}
+{% endblock %}
+
+{% block contenido %}
+  <h1>Detalle</h1>
+    <table border="2", style="width:80%">
+      <tr>
+      	<th>Id</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+  	  </tr>
+  	  <tr>
+          
+          <td>{{ a.id }}</td>
+        	<td>{{ a.nombres }}</td>
+        	<td>{{ a.apellidos }}</td>
+      </tr>
+      
+      <a href="{% url 'vista_ver_autor' id_aut=a.id %}"></a>
+    </table>
+  
+ {% endblock %}

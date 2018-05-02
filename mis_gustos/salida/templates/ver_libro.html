@@ -1,0 +1,50 @@
+¿{% extends 'base.html' %}
+{% block titulo %}
+  {{l.titulo}}
+{% endblock %}
+
+{% block contenido %}
+  <h1 >Detalle </h1>
+      <div class="row">
+        <div class="col s2">
+          
+          <h6>Id</h6>
+          <h6>Titulo</h6>
+          <h6>Isbn</h6>
+          <h6>Paginas</h6>
+          <h6>Autor</h6>
+          <h6>Genero</h6>
+          <h6>Editorial</h6>
+
+        </div>
+
+        <div class="col s4">
+
+            <p>{{ l.id }}</p>
+            <p>{{ l.titulo }}</p>
+            <p>{{ l.isbn }}</p>
+            <p>{{ l.paginas }}</p>
+            {% for g in l.autor.all %}
+              <p>{{ g }}</p>
+             
+            {% endfor %}
+            <p>{{ l.genero }}</p>
+            <p>{{ l.editorial }}</p>
+        </div>
+
+        <div class="col s4">
+
+          <img src="/media/{{l.foto}}" style="width: 250px; height: 350px; margin-left: 0px;">
+          <h6>Resumen</h6>
+          <p >{{ l.resumen }}</p>
+
+        </div>
+      </div>
+      <a href="{% url 'vista_libros'%}">Regresar a lista</a>
+      
+      <a href="{% url 'vista_ver_libro' id_lbr=l.id %}"></a>
+    
+  
+
+  
+ {% endblock %}

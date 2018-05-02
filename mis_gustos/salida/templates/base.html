@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>
+		{% block titulo %}
+		{% endblock %}
+	</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css"  media="screen,projection"/>
+</head>
+<body style="background-image: url(http://www.redcapitalmx.com/wp-content/uploads/2017/02/Libros-1-1.jpg); color:black; ">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/materialize.min.js"></script>
+	<nav>
+		<ul>
+			<li><a href="{% url 'vista_libros' %}">inicio</a></li>
+			<li><a href="{% url 'vista_about' %}">Biografia</a></li>
+			<li><a href="{% url 'vista_autores' %}">Autores</a></li>
+			<li><a href="{% url 'vista_login' %}">Login</a></li>
+			<li><a href="{% url 'vista_registro' %}">Registro</a></li>
+
+		</ul>
+	</nav>
+	{% block contenido %}
+
+	{% endblock %}
+	<script>
+		$(document).ready(function(){
+    	$('select').formSelect();
+   		});
+	</script>
+</body>
+</html>

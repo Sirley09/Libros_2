@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block titulo %}
+  Login
+{% endblock %}
+{% block contenido %}
+	<h2>{{ msj }}</h2>
+	<form action="" method="POST">
+		{% csrf_token %}
+		<div class=" row container ">
+			<div class="card-panel col s12">
+				<i class="material-icons">contact_mail</i>
+				{{formulario.usuario.errors}}
+				{{formulario.usuario.label}}
+				{{formulario.usuario}}
+
+				<div >
+					<i class="material-icons">vpn_key</i>
+					{{formulario.clave.errors}}
+					{{formulario.clave.label}}
+					{{formulario.clave}}
+				</div>
+					<input type="submit" value="login">
+			</div>
+			
+		</div>
+
+		
+
+
+		
+	</form>
+{% endblock %}

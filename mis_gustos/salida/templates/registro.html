@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block titulo %}
+  Registro
+{% endblock %}
+{% block contenido %}
+	<form action="" method="POST">
+		{% csrf_token %}
+		<div class="container">
+			<div class=" card-panel ">
+				<div class="input-field col s3 ";>
+		              	<i class="material-icons">account_circle</i>
+		              	{{ formulario.username.errors }}
+						{{ formulario.username.label }}
+						{{ formulario.username}}
+		        </div>
+
+		        <div class="input-field col s3";>
+		              	<i class="material-icons">contact_mail</i>
+		              	{{ formulario.email.errors }}
+						{{ formulario.email.label }}
+						{{ formulario.email}}
+		        </div>
+
+				<div class="input-field col s6";>
+		              	<i class="material-icons">vpn_key</i>
+		              	{{ formulario.password.errors }}
+						{{ formulario.password.label }}
+						{{ formulario.password}}
+		        </div>
+
+		        <div >
+		              	<i class="material-icons">vpn_key</i>
+		             	{{ formulario.passwordConf.errors }}
+						{{ formulario.passwordConf.label }}
+						{{ formulario.passwordConf}}
+		        </div>    
+	        </div>
+	        <input type="submit" value="registrarse">
+        </div>
+		
+	</form>
+{% endblock %}
+

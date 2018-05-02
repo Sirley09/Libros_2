@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block titulo %}
+  Lista de generos
+{% endblock %}
+{% block contenido %}
+
+  <h1>Lista de generos</h1>
+  <p>
+    {% for g in Gen %}
+      TIPO: {{ g.nombre }}
+
+      <td><a href="{% url 'vista_ver_genero' id_gen=g.id %}">ver detalle</a></td>
+
+      <td><a href="{% url 'vista_editar_genero' id_gen=g.id %}">editar</a></td>
+    {% endfor %}
+  </p>
+{% endblock %}
